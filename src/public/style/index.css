@@ -1,0 +1,19 @@
+body {
+    margin : 0;
+}
+.m-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: black;
+}
+.p-title {
+    font-weight: bold;
+    color: chocolate;
+    font-size: 2rem;
+}
+.error {
+    color: red;
+}
