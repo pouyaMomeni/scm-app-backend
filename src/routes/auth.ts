@@ -6,7 +6,8 @@ import {
     grantValid, resetPassword, 
     updateProfile,
     updateAvatar,
-    sendPublicProfile
+    sendPublicProfile,
+    me
     } from "controllers/auth";
 import validate from "src/middleware/validate";
 import { newUserSchema, resetPassSchema, verifyTokenSchema } from "src/utils/validationSchema";
@@ -28,4 +29,5 @@ authRouter.post("/reset-password",validate(resetPassSchema),isValidPasswordToken
 authRouter.patch("/update-profile",isAuth,updateProfile);
 authRouter.post("/update-avatar",isAuth,fileParser,updateAvatar);
 authRouter.get("/profile/:id",isAuth,sendPublicProfile)
+authRouter.get("/me",me)
 export default authRouter;

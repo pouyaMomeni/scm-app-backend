@@ -81,13 +81,16 @@ export const signIn : RequestHandler = async (req,res) => {
             id : user._id,
             email : user.email,
             name : user.name,
-            verify : user.verify
+            verify : user.verify,
+            avatar : user.avatar
         },
         verifyTokenSchema : {
             access : accessToken,
             refresh : refreshToken
         }
     })
+    console.log("SIGN IN - AUTH - CONTROLLER - LUNCH");
+    
 
 }
 // -- 5 --
@@ -239,6 +242,12 @@ export const sendPublicProfile :RequestHandler = async (req,res) => {
         profile : {id : user._id, name : user.name , avatar : user.avatar?.url}
     })
 }  
+
+
+export const me :RequestHandler = async (req,res) => {
+    res.json({messgae : 'me'})
+}
+
 
 
 
